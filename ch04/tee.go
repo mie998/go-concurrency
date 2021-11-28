@@ -1,4 +1,4 @@
-package main
+package ch04
 
 func orDone(done, c <-chan interface{}) <-chan interface{} {
 	valStream := make(chan interface{})
