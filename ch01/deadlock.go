@@ -1,4 +1,4 @@
-package main
+package ch01
 
 import (
 	"fmt"
@@ -11,8 +11,6 @@ type value struct {
 	value int
 }
 
-var wg sync.WaitGroup
-
 func printSum(v1, v2 *value) {
 	defer wg.Done()
 	v1.mu.Lock()
@@ -23,13 +21,4 @@ func printSum(v1, v2 *value) {
 	defer v2.mu.Unlock()
 
 	fmt.Println("sum=%v\n", v1.value+v2.value)
-}
-
-func main() {
-	var a, b value
-	wg.Add(2)
-	go printSum(&a, &b)
-	time.Sleep(1 * time.Second)
-	go printSum(&b, &a)
-	wg.Wait()
 }

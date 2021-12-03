@@ -1,14 +1,10 @@
-package main
+package ch03
 
 import (
 	"bytes"
 	"fmt"
 	"os"
 )
-
-func main() {
-	channelWithBuffer()
-}
 
 func deadlock() {
 	stringCh := make(chan string)

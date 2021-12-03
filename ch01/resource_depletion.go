@@ -1,4 +1,4 @@
-package main
+package ch01
 
 import (
 	"fmt"
@@ -44,11 +44,4 @@ func politeWorker() {
 	}
 
 	fmt.Printf("polite men eat lock for %v times\n", count)
-}
-
-func main() {
-	wg.Add(2)
-	go greedyWorker()
-	go politeWorker()
-	wg.Wait()
 }

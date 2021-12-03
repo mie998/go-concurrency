@@ -1,4 +1,4 @@
-package main
+package ch03
 
 import (
 	"fmt"
@@ -9,7 +9,7 @@ import (
 	"time"
 )
 
-func main() {
+func do() {
 	producer := func(wg *sync.WaitGroup, l sync.Locker) {
 		defer wg.Done()
 		for i := 5; i > 0; i-- {
